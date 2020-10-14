@@ -1,0 +1,10 @@
+name: motion_backend_project
+dependencies:
+  - python=3.6
+  - psycopg2
+  - pip
+  - pip:
+      - Django==3.1.2
+      - djangorestframework==3.11.1
+      - djangorestframework-simplejwt==4.4.0
+      - gunicorn
