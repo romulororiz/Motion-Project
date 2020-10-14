@@ -27,7 +27,7 @@ SECRET_KEY = '88$3$&wzqx167xb-w1v1yk)i+7jy)!ty42j$wb^vtit4@j^ox6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = ast.literal_eval(os.environ.get('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,9 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static-files/'
-MEDIA_URL = '/media-files/'
-
 STATIC_ROOT = '/static-files/'
+MEDIA_URL = '/media-files/'
 MEDIA_ROOT = '/media-files/'
 
 AUTH_USER_MODEL = 'users.User'
