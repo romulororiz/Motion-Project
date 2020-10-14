@@ -11,9 +11,8 @@ authurls = [
 ]
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('backend/admin/', admin.site.urls),
     path('backend/api/social/posts/', include('posts.urls')),
     path('backend/api/auth/', include(authurls)),
     path('backend/api/users/', include('users.urls')),
 ]
-
