@@ -43,7 +43,3 @@ class FollowUserView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
         obj.save()
         return Response(serializer.data)
-
-
-
-
