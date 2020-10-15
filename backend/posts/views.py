@@ -9,7 +9,6 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 class ListCreatePostsAPIView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         serializer = (self.get_serializer(data=request.data))
