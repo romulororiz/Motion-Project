@@ -15,3 +15,4 @@ export const userPostsAction = () => async (dispatch, getState) => {
 };
 
 export default userPostsAction;
+	
