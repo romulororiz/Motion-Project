@@ -1,6 +1,6 @@
 from posts.models import Post
 from rest_framework.response import Response
-from posts.serializers import PostSerializer, PostLessInfoSerializer
+from posts.serializers import PostSerializer
 from posts.permissions import IsAuthorOrReadOnly
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView
