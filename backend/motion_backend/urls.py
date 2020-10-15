@@ -10,6 +10,7 @@ authurls = [
     path('token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_refresh'),
 ]
 
+
 urlpatterns = [
     path('backend/admin/', admin.site.urls),
     path('backend/api/social/posts/', include('posts.urls')),
