@@ -77,7 +77,7 @@ class ShowPostOfGivenUser(ListCreateAPIView):
 
 
 class ShowOwnPosts(ListCreateAPIView):
-    query = Posts.objects.all()
+    queryset = Posts.objects.all()
     serializer_class = PostSerializer
     permission_classes = []
 
