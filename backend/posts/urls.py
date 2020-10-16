@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ListCreatePostsAPIView, RetrieveUpdateDestroyPostAPIView, ToggleLikeView, ShowLikedPosts, ShowPostOfGivenUser, ShowOwnPosts
+from .views import ListCreatePostsAPIView, RetrieveUpdateDestroyPostAPIView, ToggleLikeView, ShowLikedPosts, ShowPostOfGivenUser
 
 urlpatterns = [
     path('', ListCreatePostsAPIView.as_view()),
