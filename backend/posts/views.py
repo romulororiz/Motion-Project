@@ -75,7 +75,6 @@ class ShowPostOfGivenUser(ListCreateAPIView):
         return Response(serializer.data)
 
 
-
 # class ShowOwnPosts(ListCreateAPIView):
 #     queryset = Posts.objects.all()
 #     serializer_class = PostSerializer

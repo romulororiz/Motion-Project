@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: registry.gitlab.propulsion-home.ch/romulo-roriz/week-7/day-2-docker-basics/docker-motion-backend:latest
+    image: local:latest
     restart: always
     env_file:
       - ./envs/dev.env
@@ -10,6 +10,7 @@ services:
 
     #these volumes pass the data from your computer to the docker container 
     volumes:
+      - frontend:/frontend/build
       - ./backend:/backend
       - media-files:/media-files
       - static-files:/static-files
@@ -19,7 +20,7 @@ services:
       - postgres
 
   postgres:
-    image: postgres:11
+    image: postgres:13
     ports:
       - '5432:5432'
     volumes:
@@ -32,3 +33,5 @@ volumes:
   media-files:
   static-files:
   postgres:
+  frontend:
+

@@ -16,3 +16,4 @@ class Post(models.Model):
         return f'Post {self.id}: {self.title}'
 
 
+    
