@@ -1,4 +1,5 @@
 import { SET_USER, SET_TOKEN } from './actionTypes';
+import baseUrl from '../../helper/url_helper';
 
 export const setUser = data => {
 	return {
@@ -15,8 +16,7 @@ export const setToken = data => {
 };
 
 const loginAction = (userCredentials, history) => (dispatch, getState) => {
-	const url =
-		'https://motion-backend.propulsion-learn.ch/backend/api/auth/token/';
+	const url = `${baseUrl}/backend/api/auth/token/`;
 	const config = {
 		method: 'POST',
 		headers: new Headers({

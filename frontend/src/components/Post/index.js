@@ -23,7 +23,7 @@ import deleteIcon from '../../assets/svgs/icon-delete.svg';
 const Post = ({ post }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 
-	// const fullName = post.user.first_name + ' ' + post.user.last_name;
+	const fullName = post.author.first_name + ' ' + post.author.last_name;
 
 	return (
 		<UserPost>
@@ -36,7 +36,7 @@ const Post = ({ post }) => {
 					{/* )} */}
 				</UserAvatar>
 				<UserInfo>
-					<span>{post.author}</span>
+					<span>{fullName}</span>
 					<span>{post.created}</span>
 				</UserInfo>
 				<Menu>

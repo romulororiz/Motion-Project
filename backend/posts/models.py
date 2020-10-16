@@ -3,7 +3,7 @@ from users.models import User
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, blank=True)
     text_content = models.TextField(max_length=400)
     created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(to=User, related_name='posts', on_delete=models.CASCADE, null=True)
@@ -14,6 +14,3 @@ class Post(models.Model):
 
     def __str__(self):
         return f'Post {self.id}: {self.title}'
-
-
-    

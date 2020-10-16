@@ -19,11 +19,13 @@ import avatar from '../../assets/images/users/romulo.jpg';
 import Button from '../../style/Button';
 
 const UserProfilePage = ({ userInfo }) => {
+	console.log(userInfo);
+
 	const dispatch = useDispatch();
 
 	const [posts, setPosts] = useState([]);
 
-	// const fullName = `${userInfo.username}`;
+	const fullName = `${userInfo.first_name} ${userInfo.last_name}`;
 
 	useEffect(() => {
 		const getData = async () => {
@@ -42,7 +44,7 @@ const UserProfilePage = ({ userInfo }) => {
 				<UserInfoContainer>
 					<AvatarContainer>
 						<img src={avatar} width='120px' alt='avatar' />
-						<h1>{userInfo.username}</h1>
+						<h1>{fullName}</h1>
 						<p>Zürich - Switzerland</p>
 						<Button editProfile>Edit profile</Button>
 					</AvatarContainer>
@@ -84,7 +86,7 @@ const UserProfilePage = ({ userInfo }) => {
 								<span>Posts</span>
 							</div>
 							<div className='numsWrapper'>
-								{/* <p>{userInfo.amount_of_likes}</p> */}
+								{/* <p>{userInfo.likes_count}</p> */}
 								<span>Likes</span>
 							</div>
 							<div className='numsWrapper'>

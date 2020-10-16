@@ -6,7 +6,7 @@ import Navbar from '../components/Feed/Navbar';
 import SearchBar from '../components/Feed/Search';
 import NewPost from '../components/Feed/NewPost';
 import PostsWrapper from '../style/PostsWrapper';
-import Spinner from '../components/Feed/Spinner'
+import Spinner from '../components/Feed/Spinner';
 
 const Feed = () => {
 	const dispatch = useDispatch();
@@ -22,13 +22,15 @@ const Feed = () => {
 
 	return (
 		<Fragment>
-			<Navbar posts={posts}/>
+			<Navbar posts={posts} />
 			<SearchBar />
 			<PostsWrapper>
 				<NewPost />
-				{posts.length
-					? posts.map(post => <Post post={post} key={post.id} />)
-					: <Spinner />}
+				{posts.length ? (
+					posts.map(post => <Post post={post} key={post.id} />)
+				) : (
+					<Spinner />
+				)}
 			</PostsWrapper>
 		</Fragment>
 	);

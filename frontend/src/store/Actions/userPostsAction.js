@@ -1,8 +1,9 @@
+import baseUrl from '../../helper/url_helper';
+
 export const userPostsAction = () => async (dispatch, getState) => {
 	const { token } = getState();
 
-	const url =
-		'https://motion-backend.propulsion-learn.ch/backend/api/social/posts/user/1/';
+	const url = `${baseUrl}/backend/api/social/posts/me/`;
 	const config = {
 		method: 'GET',
 		headers: new Headers({

@@ -37,23 +37,23 @@ export const ContentSection = styled.section`
 	align-items: flex-start;
 	height: 80%;
 	padding: 1.5rem 1rem;
-    position: relative;
+	position: relative;
 
-	img:nth-child(1){
+	img:nth-child(1) {
 		border-radius: 100px;
 	}
 
-    img:nth-child(2){
-        position: absolute;
-        top: 60%;
-        left: 15%;
-        max-width: 140px;
-    }
+	img:nth-child(2) {
+		position: absolute;
+		top: 60%;
+		left: 15%;
+		max-width: 140px;
+	}
 
 	textarea {
 		font-size: ${props => props.theme.fontMedium};
 		margin-top: 5px;
-        margin-left: 18px;
+		margin-left: 18px;
 		overflow: hidden;
 		border: none;
 		resize: none;
@@ -78,10 +78,10 @@ export const ActionsModal = styled.section`
 
 export const AttachmentsModal = styled.div`
 	/* background: red; */
-    height: 100%;
+	height: 100%;
 	width: 30%;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	justify-content: space-evenly;
 
 	img {

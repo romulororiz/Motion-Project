@@ -5,12 +5,12 @@ from django.contrib.auth.hashers import make_password
 from users.serializers import UserSerializer
 from django.contrib.auth import get_user_model
 from posts.permissions import IsAuthorOrReadOnly
-from rest_framework.generics import ListCreateAPIView, GenericAPIView
+from rest_framework.generics import ListCreateAPIView, GenericAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
 
 User = get_user_model()
 
 
-class ListSingleUserView(ListCreateAPIView):
+class RetrieveUserAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = []
@@ -50,3 +50,12 @@ class FollowUserView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
         obj.save()
         return Response(serializer.data)
+
+
+class RetrieveLoggedInUserInfoAPIView(RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = []
+
+    def get_object(self):
+        return self.request.user
