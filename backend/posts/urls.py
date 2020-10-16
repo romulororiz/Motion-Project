@@ -7,5 +7,5 @@ urlpatterns = [
     path('toggle-like/<int:id>/', ToggleLikeView.as_view()),
     path('likes/', ShowLikedPosts.as_view()),
     path('user/<int:id>/', ShowPostOfGivenUser.as_view()),  # Change it to retrieve posts of logged in user (request.user)
-    path('me/', ShowOwnPosts.as_view())
+    # path('me/', ShowOwnPosts.as_view())
 ]
