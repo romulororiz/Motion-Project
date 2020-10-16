@@ -29,14 +29,14 @@ const Post = ({ post }) => {
 		<UserPost>
 			<PostInfo>
 				<UserAvatar>
-					{post.users.avatar ? (
+					{/* {post.users.avatar ? (
 						<img src={post.users.avatar} alt='user-avatar' width='45px' />
-					) : (
-						<img src={avatar} width='45px' alt='' />
-					)}
+					) : ( */}
+					<img src={avatar} width='45px' alt='' />
+					{/* )} */}
 				</UserAvatar>
 				<UserInfo>
-					<span>{post.users.username}</span>
+					<span>{post.author}</span>
 					<span>{post.created}</span>
 				</UserInfo>
 				<Menu>

@@ -23,7 +23,7 @@ const UserProfilePage = ({ userInfo }) => {
 
 	const [posts, setPosts] = useState([]);
 
-	const fullName = `${userInfo.first_name} ${userInfo.last_name}`;
+	// const fullName = `${userInfo.username}`;
 
 	useEffect(() => {
 		const getData = async () => {
@@ -42,7 +42,7 @@ const UserProfilePage = ({ userInfo }) => {
 				<UserInfoContainer>
 					<AvatarContainer>
 						<img src={avatar} width='120px' alt='avatar' />
-						<h1>{fullName}</h1>
+						<h1>{userInfo.username}</h1>
 						<p>Zürich - Switzerland</p>
 						<Button editProfile>Edit profile</Button>
 					</AvatarContainer>
