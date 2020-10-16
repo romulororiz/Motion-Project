@@ -24,7 +24,7 @@ const Post = ({ post }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 
 	const fullName = post.user.first_name + ' ' + post.user.last_name;
-
+	
 	return (
 		<UserPost>
 			<PostInfo>

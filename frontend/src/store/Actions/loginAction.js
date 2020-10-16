@@ -1,21 +1,22 @@
-import { SET_USER, SET_TOKEN } from './actionTypes'
+import { SET_USER, SET_TOKEN } from './actionTypes';
 
 export const setUser = data => {
-    return {
-        type: SET_USER,
-        payload: [data.access, data.user]
-    }
-}
+	return {
+		type: SET_USER,
+		payload: [data.access, data.user],
+	};
+};
 
 export const setToken = data => {
-    return {
-        type: SET_TOKEN,
-        payload: data
-    }
-}
+	return {
+		type: SET_TOKEN,
+		payload: data,
+	};
+};
 
 const loginAction = (userCredentials, history) => (dispatch, getState) => {
-	const url = 'https://motion.propulsion-home.ch/backend/api/auth/token/';
+	const url =
+		'https://motion-backend.propulsion-learn.ch/backend/api/auth/token/';
 	const config = {
 		method: 'POST',
 		headers: new Headers({
