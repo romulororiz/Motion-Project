@@ -1,7 +1,7 @@
 export const userPostsAction = () => async (dispatch, getState) => {
 	const { token } = getState();
 
-	const url = 'https://motion.propulsion-home.ch/backend/api/social/posts/me/';
+	const url = 'https://motion-backend.propulsion-learn.ch/backend/api/users/1/';
 	const config = {
 		method: 'GET',
 		headers: new Headers({
@@ -15,4 +15,3 @@ export const userPostsAction = () => async (dispatch, getState) => {
 };
 
 export default userPostsAction;
-	

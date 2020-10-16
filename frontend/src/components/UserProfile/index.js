@@ -80,23 +80,23 @@ const UserProfilePage = ({ userInfo }) => {
 						</Top>
 						<Bottom>
 							<div className='numsWrapper'>
-								<p>{userInfo.amount_of_posts}</p>
+								{/* <p>{userInfo.amount_of_posts}</p> */}
 								<span>Posts</span>
 							</div>
 							<div className='numsWrapper'>
-								<p>{userInfo.amount_of_likes}</p>
+								{/* <p>{userInfo.amount_of_likes}</p> */}
 								<span>Likes</span>
 							</div>
 							<div className='numsWrapper'>
-								<p>{userInfo.amount_of_friends}</p>
+								{/* <p>{userInfo.amount_of_friends}</p> */}
 								<span>Friends</span>
 							</div>
 							<div className='numsWrapper'>
-								<p>{userInfo.amount_of_followers}</p>
+								{/* <p>{userInfo.amount_of_followers}</p> */}
 								<span>Followers</span>
 							</div>
 							<div className='numsWrapper'>
-								<p>{userInfo.amount_following}</p>
+								{/* <p>{userInfo.amount_following}</p> */}
 								<span>Following</span>
 							</div>
 						</Bottom>
