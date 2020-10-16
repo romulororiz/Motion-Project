@@ -1,3 +1,4 @@
+from django.db.models import query
 from posts.models import Post
 from rest_framework.response import Response
 from posts.serializers import PostSerializer
@@ -57,3 +58,19 @@ class ShowLikedPosts(ListCreateAPIView):
     #     queryset_filtered = queryset.filter(liked_by=request.user)
     #     serializer = self.get_serializer(queryset_filtered, many=True)
     #     return Response(serializer.data)
+
+
+class ShowPostOfGivenUser(ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = []
+    lookup_field = 'id'
+
+    class Meta:
+        ordering = ['id']
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset().filter(author=kwargs['id'])
+        serializer = PostSerializer(queryset, many=True)
+        serializer.is_valid(raise_exception=True)
+        return Response(serializer.data)
