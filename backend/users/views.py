@@ -10,10 +10,17 @@ from rest_framework.generics import ListCreateAPIView, GenericAPIView
 User = get_user_model()
 
 
+class ListSingleUserView(ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = []
+    lookup_field = 'id'
+
+
 class ListCreateUsersAPIView(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthorOrReadOnly]
+    permission_classes = []
 
     def perform_create(self, serializer):
         serializer.save(password=make_password(self.request.data['password']))

@@ -9,6 +9,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 class ListCreatePostsAPIView(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = []
 
     def post(self, request, *args, **kwargs):
         serializer = (self.get_serializer(data=request.data))
@@ -20,14 +21,14 @@ class ListCreatePostsAPIView(ListCreateAPIView):
 class RetrieveUpdateDestroyPostAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [AllowAny]
+    permission_classes = []
     lookup_field = 'id'
 
 
 class ToggleLikeView(GenericAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = []
     lookup_field = 'id'
 
     def patch(self, request, *args, **kwargs):
@@ -46,7 +47,7 @@ class ToggleLikeView(GenericAPIView):
 class ShowLikedPosts(ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = []
 
     def get_queryset(self):
         return self.request.user.liked_posts.all()

@@ -23,20 +23,20 @@ import deleteIcon from '../../assets/svgs/icon-delete.svg';
 const Post = ({ post }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 
-	const fullName = post.user.first_name + ' ' + post.user.last_name;
-	
+	// const fullName = post.user.first_name + ' ' + post.user.last_name;
+
 	return (
 		<UserPost>
 			<PostInfo>
 				<UserAvatar>
-					{post.user.avatar ? (
-						<img src={post.user.avatar} alt='user-avatar' width='45px' />
+					{post.users.avatar ? (
+						<img src={post.users.avatar} alt='user-avatar' width='45px' />
 					) : (
 						<img src={avatar} width='45px' alt='' />
 					)}
 				</UserAvatar>
 				<UserInfo>
-					<span>{fullName}</span>
+					<span>{post.users.username}</span>
 					<span>{post.created}</span>
 				</UserInfo>
 				<Menu>
@@ -59,7 +59,7 @@ const Post = ({ post }) => {
 					) : null}
 				</Menu>
 			</PostInfo>
-			<PostContent>{post.content}</PostContent>
+			<PostContent>{post.text_content}</PostContent>
 			<PostActions>
 				<Actions>
 					<img src={heart} alt='like' />
@@ -68,7 +68,7 @@ const Post = ({ post }) => {
 					<p>Share</p>
 				</Actions>
 				<Likes>
-					<span>{post.amount_of_likes} likes</span>
+					<span>{post.likes_counter} likes</span>
 				</Likes>
 			</PostActions>
 		</UserPost>
