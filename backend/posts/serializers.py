@@ -1,5 +1,6 @@
 from posts.models import Post
 from rest_framework import serializers
+from users.serializers import LessInfoUserSerializer
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -10,13 +11,16 @@ class PostSerializer(serializers.ModelSerializer):
         return post.liked_by.all().count()
 
     class Meta:
+
+        author = LessInfoUserSerializer()
+
         model = Post
         fields = '__all__'
         read_only_fields = ['liked_by', 'author', 'like_count']
 
 
-class PostLessInfoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Post
-        fields = ['id', 'title', 'author']
-        read_only_fields = ['author']
+# class PostLessInfoSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Post
+#         fields = ['id', 'title', 'author']
+#         read_only_fields = ['author']

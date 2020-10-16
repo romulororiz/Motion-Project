@@ -10,3 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'password', 'followers']
 
 
+class LessInfoUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username']
