@@ -11,12 +11,14 @@ class PostSerializer(serializers.ModelSerializer):
         return post.liked_by.all().count()
 
     class Meta:
-
-        author = LessInfoUserSerializer()
+        
+        author = LessInfoUserSerializer
 
         model = Post
         fields = '__all__'
         read_only_fields = ['liked_by', 'author', 'like_count']
+
+        
 
 
 # class PostLessInfoSerializer(serializers.ModelSerializer):
