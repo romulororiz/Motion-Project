@@ -57,7 +57,7 @@ const Button = styled.button`
 			`;
 		}
 
-		if (props.sendModal){
+		if (props.sendModal) {
 			return `
 			font-size: ${props.theme.fontSmall};
 			width: 60px;
@@ -71,12 +71,12 @@ const Button = styled.button`
 			`;
 		}
 
-		if (props.editProfile){
+		if (props.editProfile) {
 			return `
 			background: #fff;
 			padding: 12px 40px;
 			letter-spacing: .08rem;
-			&:hover{
+			&:hover {
 				background: ${props.theme.perano};
 				color: #fff;
 			}

@@ -15,5 +15,6 @@ urlpatterns = [
     path('backend/admin/', admin.site.urls),
     path('backend/api/social/posts/', include('posts.urls')),
     path('backend/api/auth/', include(authurls)),
-    path('backend/api/users/', include('users.urls')),
+    path('backend/api/social/users/', include('users.urls')),
+    path('backend/api/social/friends/', include('friends.urls'))
 ]

@@ -16,7 +16,7 @@ const NewPost = () => {
 		<Fragment>
 			{showModal ? <ModalBox /> : null}
 			<NewPostContainer>
-				<img src={avatar} width='70px' alt='avatar' />
+				<img className="avatar" src={avatar} width='70px' alt='avatar' />
 				<input
 					onClick={showModalHandler}
 					type='text'

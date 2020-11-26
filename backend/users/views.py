@@ -1,11 +1,9 @@
-import json
-from rest_framework import status
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from users.serializers import UserSerializer
 from django.contrib.auth import get_user_model
-from posts.permissions import IsAuthorOrReadOnly
-from rest_framework.generics import ListCreateAPIView, GenericAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, GenericAPIView, RetrieveAPIView, RetrieveUpdateAPIView
+# from posts.permissions import IsAuthorOrReadOnly
 
 User = get_user_model()
 
@@ -24,14 +22,6 @@ class ListCreateUsersAPIView(ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(password=make_password(self.request.data['password']))
-
-    # def post(self, request, *args, **kwargs):
-    #     new_user = json.loads(request.body)
-    #     user = User(**new_user)
-    #     user.set_password(request.data['password'])
-    #     user.save()
-    #     serializer = self.get_serializer(user)
-    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class FollowUserView(GenericAPIView):
@@ -52,10 +42,13 @@ class FollowUserView(GenericAPIView):
         return Response(serializer.data)
 
 
-class RetrieveLoggedInUserInfoAPIView(RetrieveAPIView):
+class RetrieveUpdateLoggedInUserInfoAPIView(RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = []
 
     def get_object(self):
         return self.request.user
+
+
+# class Retrieve

@@ -29,7 +29,7 @@ const Feed = () => {
 				{posts.length ? (
 					posts.map(post => <Post post={post} key={post.id} />)
 				) : (
-					<Spinner />
+					<h3>Loading...</h3>
 				)}
 			</PostsWrapper>
 		</Fragment>

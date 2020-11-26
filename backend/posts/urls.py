@@ -6,6 +6,7 @@ urlpatterns = [
     path('<int:id>/', RetrieveUpdateDestroyPostAPIView.as_view()),
     path('toggle-like/<int:id>/', ToggleLikeView.as_view()),
     path('likes/', ShowLikedPosts.as_view()),
-    path('user/<int:id>/', ShowPostOfGivenUser.as_view()),  # Change it to retrieve posts of logged in user (request.user)
+    path('user/<int:id>/', ShowPostOfGivenUser.as_view()),
+    path('?search=<str:search_string>', ListCreatePostsAPIView.as_view()),
     path('me/', ShowOwnPosts.as_view())
 ]

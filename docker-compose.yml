@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: local:latest
+    image: registry.gitlab.propulsion-home.ch/romulo-roriz/week-7/day-2-docker-basics/docker-motion-backend:latest
     restart: always
     env_file:
       - ./envs/dev.env
@@ -20,7 +20,7 @@ services:
       - postgres
 
   postgres:
-    image: postgres:13
+    image: postgres:11
     ports:
       - '5432:5432'
     volumes:

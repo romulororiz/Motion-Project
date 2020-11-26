@@ -1,6 +1,8 @@
-from .models import User
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
+
+User = get_user_model()
 
 
 @admin.register(User)
@@ -15,12 +17,11 @@ class UserAdmin(UserAdmin):
     )
     # fields when reading / updating an instance
     fieldsets = (
-        (None, {'fields': ('email', 'username', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name')}),
+        ('Credentials', {'fields': ('email', 'username', 'password')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Groups', {'fields': ('groups',)}),
     )
     # fields which are shown when looking at an list of instances
-    list_display = ('email', 'first_name', 'last_name', 'is_staff')
+    list_display = ('email', 'is_staff')
     ordering = ('email',)

@@ -1,13 +1,16 @@
 from django.db.models import query
-from posts.models import Post
+from .models import Post
 from rest_framework.response import Response
-from posts.serializers import PostSerializer
-from posts.permissions import IsAuthorOrReadOnly
+from .serializers import PostSerializer
+from .permissions import IsAuthorOrReadOnly
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView
+from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView
+from rest_framework import filters
 
 
 class ListCreatePostsAPIView(ListCreateAPIView):
+    search_fields = ['text_content']
+    filter_backends = (filters.SearchFilter,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = []
